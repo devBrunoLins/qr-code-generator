@@ -1,0 +1,11 @@
+{
+    "/api-qr-code/*": {
+        "target": "https://api.qrserver.com/v1",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api-qr-code": ""
+          }
+    }
+}

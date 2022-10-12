@@ -1,0 +1,43 @@
+@import './mixins.scss';
+
+.app {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    grid-template-rows: 30% 40%;
+    background: linear-gradient(45deg, #bd5f05, #b300ff);
+    &__title {
+        display: flex;
+        justify-content: center;
+        color: #fff;
+    }
+    &__form {
+        padding: 20px;
+        height: 30vh;
+        display: grid;
+        align-items: center;
+        justify-content: center;        
+
+        &__input {
+            @include input();
+        }
+
+        &__button {
+            @include button();
+        }
+
+        > form {
+            display: grid;
+            gap: 34px;
+        }
+    }
+
+    &__qr-code {
+        display: grid;
+        gap: 16px;
+        &__button {
+            @include button();
+        }
+    }
+}
