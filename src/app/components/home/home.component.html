@@ -1,0 +1,18 @@
+<div class="home">
+    <div class="home__title">
+      <h1>Gerador de QR Code</h1>
+    </div>
+    <div class="home__form">
+      <form [formGroup]="form">
+        <input *ngIf="!qrCodeGenerated" class="home__form__input" formControlName="url_content" placeholder="Digite uma URL/Nome">
+        <input *ngIf="!qrCodeGenerated" class="home__form__input" formControlName="color" placeholder="Cor do QR em HEX (A cor definida por padrão é 000000)">
+        <img *ngIf="qrCodeGenerated" [src]="qrCodeGenerated">
+        <button *ngIf="!qrCodeGenerated" class="home__form__button" (click)="onSubmit()">
+          <span *ngIf="!isLoading">Gerar QrCode</span>
+          <span *ngIf="isLoading">Carregando...</span>
+        </button>
+        <button *ngIf="qrCodeGenerated" class="home__qr-code__button" (click)="clean()">Gerar outro Qr Code</button>
+      </form>
+    </div>
+  
+  </div>
